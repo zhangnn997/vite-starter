@@ -8,6 +8,7 @@ import VueRouter from 'unplugin-vue-router/vite'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,6 +37,17 @@ export default defineConfig({
         VueRouterAutoImports,
         '@vueuse/core'
       ]
+    }),
+    Components({
+      /* options */
+
+      // Allow subdirectories as namespace prefix for components.
+      directoryAsNamespace: true,
+
+      // Collapse same prefixes (camel-sensitive) of folders and components
+      // to prevent duplication inside namespaced component name.
+      // works when `directoryAsNamespace: true`
+      collapseSamePrefixes: true
     })
   ],
   resolve: {

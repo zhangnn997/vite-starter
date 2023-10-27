@@ -1,3 +1,4 @@
+import HelloWorld from '@/components/HelloWorld.vue';
 <template>
   <div ref="target">
     <div>Hello World</div>
@@ -7,6 +8,8 @@
     <p>y: {{ y }}</p>
     <p>isOutside: {{ isOutside }}</p>
   </div>
+  <HelloWorld></HelloWorld>
+  <UserComponent></UserComponent>
 </template>
 
 <script setup lang="ts">
