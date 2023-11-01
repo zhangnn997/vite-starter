@@ -103,6 +103,9 @@ devDependencies:
   vite:
     specifier: ^4.4.9
     version: 4.4.11(@types/node@18.18.4)(sass@1.69.4)
+  vite-plugin-vue-layouts:
+    specifier: ^0.8.0
+    version: 0.8.0(vite@4.4.11)(vue-router@4.2.5)(vue@3.3.4)
   vitest:
     specifier: ^0.34.4
     version: 0.34.6(jsdom@22.1.0)(sass@1.69.4)
@@ -4660,6 +4663,23 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
+
+  /vite-plugin-vue-layouts@0.8.0(vite@4.4.11)(vue-router@4.2.5)(vue@3.3.4):
+    resolution: {integrity: sha512-UZW2nSV2LraTSe7gsAL46hfdi7a0X1RvkGGoJVtA2O8beu7anzpXFwQLou8+kHy31CzVycT4gIPySBsHhtBN5g==}
+    peerDependencies:
+      vite: ^2.5.0 || ^3.0.0-0 || ^4.0.0
+      vue: ^2.6.12 || ^3.2.4
+      vue-router: ^3.5.1 || ^4.0.11
+    dependencies:
+      '@vue/compiler-sfc': 3.3.4
+      debug: 4.3.4(supports-color@8.1.1)
+      fast-glob: 3.3.1
+      vite: 4.4.11(@types/node@18.18.4)(sass@1.69.4)
+      vue: 3.3.4
+      vue-router: 4.2.5(vue@3.3.4)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite@4.4.11(@types/node@18.18.4)(sass@1.69.4):

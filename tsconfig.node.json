@@ -10,7 +10,7 @@
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "moduleResolution": "Node", // 要改，等消息
     "types": ["node"]
   }
 }

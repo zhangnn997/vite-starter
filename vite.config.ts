@@ -3,12 +3,15 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 import VueRouter from 'unplugin-vue-router/vite'
-import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
+
+import Layouts from 'vite-plugin-vue-layouts'
+
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -48,7 +51,8 @@ export default defineConfig({
       // to prevent duplication inside namespaced component name.
       // works when `directoryAsNamespace: true`
       collapseSamePrefixes: true
-    })
+    }),
+    Layouts({ layoutsDirs: 'src/layouts', defaultLayout: 'default' })
   ],
   resolve: {
     alias: {
