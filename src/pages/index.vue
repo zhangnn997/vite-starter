@@ -22,9 +22,20 @@ import HelloWorld from '@/components/HelloWorld.vue';
   <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
   <!-- airpline costom -->
   <div class="i-iconamoon:3d" style="color: red; font-size: 1.5rem"></div>
+  <Child @click-count="handleClick"></Child>
 </template>
 
 <script setup lang="ts">
+const handleClick = (num: number) => {
+  console.log(num)
+}
+
+// defineOptions({
+//   name: 'HomeIndex1'
+// })
+
+// defineRender(() => <div>hello</div>)
+
 const msg = ref('hello world')
 
 const target = ref(null)
@@ -38,3 +49,9 @@ const { x, y, isOutside } = useMouseInElement(target)
 meta:
   layout: default
 </route>
+
+<!-- <script lang="ts">
+export default defineComponent({
+  name: 'HomeIndex'
+})
+</script> -->
