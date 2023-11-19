@@ -13,6 +13,7 @@ import Components from 'unplugin-vue-components/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 
 import UnoCSS from 'unocss/vite'
+import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -57,7 +58,10 @@ export default defineConfig({
       // works when `directoryAsNamespace: true`
       collapseSamePrefixes: true
     }),
-    Layouts({ layoutsDirs: 'src/layouts', defaultLayout: 'default' })
+    Layouts({ layoutsDirs: 'src/layouts', defaultLayout: 'default' }),
+    VitePWA({
+      registerType: 'autoUpdate'
+    })
   ],
   resolve: {
     alias: {

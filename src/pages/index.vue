@@ -23,12 +23,27 @@ import HelloWorld from '@/components/HelloWorld.vue';
   <!-- airpline costom -->
   <div class="i-iconamoon:3d" style="color: red; font-size: 1.5rem"></div>
   <Child @click-count="handleClick"></Child>
+  111
+  <!-- <ReloadPrompt></ReloadPrompt>
+  hello -->
 </template>
 
 <script setup lang="ts">
+import { registerSW } from 'virtual:pwa-register'
 const handleClick = (num: number) => {
   console.log(num)
 }
+
+onMounted(() => {
+  registerSW({
+    immediate: true,
+    onRegisteredSW: (_url, registration) => {
+      setInterval(() => {
+        registration?.update()
+      }, 5000)
+    }
+  })
+})
 
 // defineOptions({
 //   name: 'HomeIndex1'
