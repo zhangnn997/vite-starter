@@ -1,5 +1,7 @@
 <template>
-  <div>default layouts</div>
+  <div class="flex">
+    <router-link to="/">home</router-link>
+  </div>
   <RouterView></RouterView>
 </template>
 
